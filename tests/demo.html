@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>etable 测试</title>
+    <title>editable 测试</title>
     <style>
         html,
         body {
@@ -69,14 +69,14 @@
 
 <body>
 
-    <h1>etable demo</h1>
+    <h1>editable demo</h1>
     <p class="tips">一款基于jQuery的轻量级可编辑表格插件，适用于快速录单等应用场景，支持键盘操作</p>
 
     <br />
-    <h2>etable1 实例<label class="tips">（全功能：支持操作按钮、上下左右方向键移动、最后单元格TAB键新增行等）</label></h2>
+    <h2>editable1 实例<label class="tips">（全功能：支持操作按钮、上下左右方向键移动、最后单元格TAB键新增行等）</label></h2>
     <!-- 每个table需要一个div包裹 -->
     <div>
-        <table id="etable1">
+        <table id="editable1">
             <thead>
                 <!-- thead是必须的 -->
                 <tr>
@@ -104,10 +104,10 @@
 
     <br />
 
-    <h2>etable2 实例<label class="tips">（禁用操作按钮，最后单元格TAB键依然可新增行）</label></h2>
+    <h2>editable2 实例<label class="tips">（禁用操作按钮，最后单元格TAB键依然可新增行）</label></h2>
     <!-- 每个table需要一个div包裹 -->
     <div>
-        <table id="etable2">
+        <table id="editable2">
             <thead>
                 <!-- thead是必须的 -->
                 <tr>
@@ -135,10 +135,10 @@
 
     <br />
 
-    <h2>etable3 实例<button id="etable3-tran-btn">点击转换成etable实例（空表格）</button></h2>
+    <h2>editable3 实例<button id="editable3-tran-btn">点击转换成editable实例（空表格）</button></h2>
     <!-- 每个table需要一个div包裹 -->
     <div>
-        <table id="etable3">
+        <table id="editable3">
             <thead>
                 <!-- thead是必须的 -->
                 <tr>
@@ -166,10 +166,10 @@
 
     <br />
 
-    <h2>etable4 实例<button id="etable4-tran-btn">点击转换成etable实例（已有行的表格）</button></h2>
+    <h2>editable4 实例<button id="editable4-tran-btn">点击转换成editable实例（已有行的表格）</button></h2>
     <!-- 每个table需要一个div包裹 -->
     <div>
-        <table id="etable4">
+        <table id="editable4">
             <thead>
                 <!-- thead是必须的 -->
                 <tr>
@@ -197,10 +197,10 @@
 
     <br />
 
-    <h2>etable5 数据获取实例 <button id="etable5-tran-btn">点击获取编辑数据（注意console中显示）</button></h2>
+    <h2>editable5 数据获取实例 <button id="editable5-tran-btn">点击获取编辑数据（注意console中显示）</button></h2>
     <!-- 每个table需要一个div包裹 -->
     <div>
-        <table id="etable5">
+        <table id="editable5">
             <thead>
                 <!-- thead是必须的 -->
                 <tr>
@@ -226,15 +226,15 @@
         </table>
     </div>
     <br />
-    <div id="etable5-data-result" style="width:auto;min-height:50px;background-color: #f2f2f2;border:1px solid #ccc;padding:10px;">etable5的编辑数据</div>
+    <div id="editable5-data-result" style="width:auto;min-height:50px;background-color: #f2f2f2;border:1px solid #ccc;padding:10px;">editable5的编辑数据</div>
     <br />
     <br />
 
-    <button id="etable-debug-btn">所有etable实例调试信息（注意console中显示）</button>
-    <button id="etable1-debug-btn">etable1的调试信息（注意console中显示）</button>
-    <button id="etable2-debug-btn">etable2的编辑行调试信息（注意console中显示）</button>
+    <button id="editable-debug-btn">所有editable实例调试信息（注意console中显示）</button>
+    <button id="editable1-debug-btn">editable1的调试信息（注意console中显示）</button>
+    <button id="editable2-debug-btn">editable2的编辑行调试信息（注意console中显示）</button>
     <br /><br />
-    <div id="etable-debug-result" style="width:auto;min-height:50px;background-color: #f2f2f2;border:1px solid #ccc;padding:10px;">调试输出信息</div>
+    <div id="editable-debug-result" style="width:auto;min-height:50px;background-color: #f2f2f2;border:1px solid #ccc;padding:10px;">调试输出信息</div>
     <br />
     <br />
 
@@ -243,13 +243,13 @@
     <link rel="stylesheet" type="text/css" href="js/laydate/laydate.css" />
     <script src="js/laydate/laydate.js"></script>
     <script src="js/layer/layer.js"></script>
-    <script src="../src/etable.js"></script>
+    <script src="../src/editable.js"></script>
 
     <script>
         let values = { 0: '禁用', 1: '启用' }; // select下拉框的可选数据来源
 
-        funsent.etable.init('#etable1', {
-            tag: 'etable1_tag',
+        funsent.editable.init('#editable1', {
+            tag: 'editable1_tag',
             row_number: 2,
             editable_row_max: 10,
             enable_keyboard: true,
@@ -265,8 +265,8 @@
             ]
         });
 
-        funsent.etable.init('#etable2', {
-            tag: 'etable2_tag',
+        funsent.editable.init('#editable2', {
+            tag: 'editable2_tag',
             row_number: 3,
             editable_row_max: 10,
             enable_keyboard: true,
@@ -282,10 +282,10 @@
             ]
         });
 
-        $('#etable3-tran-btn').click(function () {
+        $('#editable3-tran-btn').click(function () {
             $(this).unbind('click').prop('disabled', true);
-            funsent.etable.init('#etable3', {
-                tag: 'etable3_tag',
+            funsent.editable.init('#editable3', {
+                tag: 'editable3_tag',
                 row_number: 4,
                 editable_row_max: 10,
                 enable_keyboard: true,
@@ -302,10 +302,10 @@
             });
         });
 
-        $('#etable4-tran-btn').click(function () {
+        $('#editable4-tran-btn').click(function () {
             $(this).unbind('click').prop('disabled', true);
-            funsent.etable.init('#etable4', {
-                tag: 'etable4_tag',
+            funsent.editable.init('#editable4', {
+                tag: 'editable4_tag',
                 row_number: 3,
                 editable_row_max: 10,
                 enable_keyboard: true,
@@ -322,8 +322,8 @@
             });
         });
 
-        funsent.etable.init('#etable5', {
-            tag: 'etable5_tag',
+        funsent.editable.init('#editable5', {
+            tag: 'editable5_tag',
             row_number: 5,
             editable_row_max: 10,
             enable_keyboard: true,
@@ -331,7 +331,7 @@
             enable_button: true,
             columns: [
                 { type: 'checkbox', name: 'id', value: '1', readonly: false },
-                { type: 'text', name: 'name', value: 'funsent-etable', align: 'left', readonly: false },
+                { type: 'text', name: 'name', value: 'funsent-editable', align: 'left', readonly: false },
                 { type: 'date', name: 'begin_time', value: '2021-12-18', align: 'center', readonly: false },
                 { type: 'date', name: 'end_time', value: '2021-12-19', align: 'center', readonly: true },
                 { type: 'text', name: 'organizer', value: 'funsent 5', align: 'left', readonly: false },
@@ -339,30 +339,30 @@
             ]
         });
 
-        $('#etable5-tran-btn').click(function () {
-            let data = funsent.etable.data('#etable5');
-            // let data = funsent.etable.data(4);
-            // let data = funsent.etable.data({tag:'etable5_tag'});
+        $('#editable5-tran-btn').click(function () {
+            let data = funsent.editable.data('#editable5');
+            // let data = funsent.editable.data(4);
+            // let data = funsent.editable.data({tag:'editable5_tag'});
             console.log(data);
-            $('#etable5-data-result').html('etable5 数据获取结果：<br />' + JSON.stringify(data));
+            $('#editable5-data-result').html('editable5 数据获取结果：<br />' + JSON.stringify(data));
         });
 
-        $('#etable-debug-btn').click(function () {
-            let info = funsent.etable.info();
+        $('#editable-debug-btn').click(function () {
+            let info = funsent.editable.info();
             console.log(info);
-            $('#etable-debug-result').html('所有etable实例的调试信息：<br />' + JSON.stringify(info));
+            $('#editable-debug-result').html('所有editable实例的调试信息：<br />' + JSON.stringify(info));
         });
 
-        $('#etable1-debug-btn').click(function () {
-            let info = funsent.etable.info('#etable1');
+        $('#editable1-debug-btn').click(function () {
+            let info = funsent.editable.info('#editable1');
             console.log(info);
-            $('#etable-debug-result').html('etable1的所有调试信息：<br />' + JSON.stringify(info));
+            $('#editable-debug-result').html('editable1的所有调试信息：<br />' + JSON.stringify(info));
         });
 
-        $('#etable2-debug-btn').click(function () {
-            let info = funsent.etable.info('#etable2', 'configs');
+        $('#editable2-debug-btn').click(function () {
+            let info = funsent.editable.info('#editable2', 'configs');
             console.log(info);
-            $('#etable-debug-result').html('etable2的配置参数：<br />' + JSON.stringify(info));
+            $('#editable-debug-result').html('editable2的配置参数：<br />' + JSON.stringify(info));
         });
     </script>
 </body>
