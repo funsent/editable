@@ -12,13 +12,13 @@
 
 #### 插件演示
 
-[demo演示地址](https://funsent.github.io/etable/)
+[demo演示地址](https://funsent.github.io/etable/?_blank)
 
 > 以上演示地址使用的是 GitHub Pages 服务
 
-![editable demo 演示](tests/demo.png)
+![editable demo 演示](tests/demo.png?_blank)
 
-![editable多实例 实际项目中的演示](tests/instances.png)
+![editable多实例 实际项目中的演示](tests/instances.png?_blank)
 
 #### 插件使用
 
