@@ -16,9 +16,9 @@
 
 > 以上演示地址使用的是 GitHub Pages 服务
 
-![editable demo 演示](tests/demo.png){:target="_blank"}
+![editable demo 演示](tests/demo.png)
 
-![editable多实例 实际项目中的演示](tests/instances.png){:target="_blank"}
+![editable多实例 实际项目中的演示](tests/instances.png)
 
 #### 插件使用
 
