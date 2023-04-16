@@ -27,7 +27,7 @@
 
     // 默认参数
     let defaults = {
-        // etable实例唯一标签，用于获取数据时识别特定etable实例
+        // editable实例唯一标签，用于获取数据时识别特定editable实例
         tag: '',
         // 空表格时为可编辑行数，非空表格时为多出的可编辑行数
         row_number: 0,
@@ -66,8 +66,8 @@
     // 语言包
     const langs = {
         'invalid element name': '{0} 参数必须是有效的table样式字符串或者table的DOM对象',
-        'instance not found': 'etable 实例不存在',
-        'create etable on hidden element is invalid': '隐藏元素上创建etable是无意义的',
+        'instance not found': 'editable 实例不存在',
+        'create editable on hidden element is invalid': '隐藏元素上创建editable是无意义的',
         'the immediate parent of table must be a block element': 'table的直接父级元素必须是块元素（display:block）',
         'cannot insert more rows': '无法新增行，最多编辑行数：{0}',
         'the last row cannot be deleted': '禁止删除唯一行'
@@ -82,7 +82,7 @@
     const _this = {
 
         /**
-         * 实例集合，每行代表一个table实例，支持在一个页面下设置多个etable
+         * 实例集合，每行代表一个table实例，支持在一个页面下设置多个editable
          * 参数说明：
          * 1. element 每个实例的原始table元素
          * 2. element_key 每个实例键名
@@ -103,7 +103,7 @@
         // 1. table的DOM对象
         // 2. table样式字符串
         // 3. 自定义table的tag唯一字符串标签，必须以json对象形式给出，如：{tag:'table'}
-        // 4. 整数索引，实例化etable的顺序
+        // 4. 整数索引，实例化editable的顺序
         instance: function (element) {
 
             if (this.isNumber(element)) {
@@ -267,7 +267,7 @@
 
 
             if ($target.is(':hidden')) {
-                this.consoleError(this.lang('create etable on hidden element is invalid'));
+                this.consoleError(this.lang('create editable on hidden element is invalid'));
                 return false;
             }
 
@@ -310,7 +310,7 @@
             this.instances.push(instance);
 
             // 添加element_key
-            let elementKeyPrefix = 'funsent_etable';
+            let elementKeyPrefix = 'funsent_editable';
             for (let i = 0, length = this.instances.length; i < length; i++) {
                 this.instances[i].element_key = elementKeyPrefix + i;
             }
@@ -318,11 +318,11 @@
             return instance;
         },
 
-        //TODO 还原，使得已经etable编辑状态的变成原始的td状态
+        //TODO 还原，使得已经editable编辑状态的变成原始的td状态
         restore: function () { },
 
-        //TODO 预览，使得编辑好的数据直接呈现在td中，并关停etable编辑状态
-        // 应用场景：如提交后不需要在启用etable编辑的情况，可调用此方法
+        //TODO 预览，使得编辑好的数据直接呈现在td中，并关停editable编辑状态
+        // 应用场景：如提交后不需要在启用editable编辑的情况，可调用此方法
         preview: function () { },
 
         //TODO 移动行，向上向下移动（交换行）
@@ -440,7 +440,7 @@
 
                     if (k == 32) {
                         // 空格键按下时，如果碰到日期选择框，则触发click事件，以便能够弹出日期选择框
-                        if ($input.hasClass('funsent-etable-input-date')) {
+                        if ($input.hasClass('funsent-editable-input-date')) {
                             $input.trigger('click');
                         }
                         return;
@@ -519,7 +519,7 @@
             let $table = instance.target, $thead = $table.find('thead'), theadHeight = $thead.outerHeight(); let $parent = $table.parent().css('position', 'relative');
 
             // 删除之前的所有工具按钮
-            $parent.find('div.funsent-etable-btn-group').remove();
+            $parent.find('div.funsent-editable-btn-group').remove();
 
             let btnGroupStyle = { position: 'absolute', left: '2px', top: '0', display: 'block', padding: '0', margin: '0', width: '48px', height: '14px', overflow: 'hidden', backgroundColor: 'transparent' };
             let btnStyle = { opacity: '0.3', fontSize: '12px', width: '12px', height: '12px', lineHeight: '12px', display: 'block', float: 'left', textAlign: 'center', backgroundColor: '#eff8fd', color: '#06f', padding: '0', margin: '0 2px 0 0', border: '1px solid #06f', borderRadius: '2px', position: 'relative' };
@@ -532,12 +532,12 @@
             let that = this;
             for (let i = 0; i < rowCnt; i++) {
 
-                let $btn1 = $('<a class="funsent-etable-btn" href="javascript:;" title="上方插入新行"><label>&#9650</label></a>').css(btnStyle).hover(over, out).mousedown(down).mouseup(up).find('label').css(btnLabelStyle).end(),
-                    $btn2 = $('<a class="funsent-etable-btn" href="javascript:;" title="下方插入新行"><label>&#9660</label></a>').css(btnStyle).hover(over, out).mousedown(down).mouseup(up).find('label').css(btnLabelStyle).end(),
-                    $btn3 = $('<a class="funsent-etable-btn" href="javascript:;" title="删除当前行"><label>&#9986</label></a>').css(btnStyle).hover(over, out).mousedown(down).mouseup(up).find('label').css(btnLabelStyle).end();
+                let $btn1 = $('<a class="funsent-editable-btn" href="javascript:;" title="上方插入新行"><label>&#9650</label></a>').css(btnStyle).hover(over, out).mousedown(down).mouseup(up).find('label').css(btnLabelStyle).end(),
+                    $btn2 = $('<a class="funsent-editable-btn" href="javascript:;" title="下方插入新行"><label>&#9660</label></a>').css(btnStyle).hover(over, out).mousedown(down).mouseup(up).find('label').css(btnLabelStyle).end(),
+                    $btn3 = $('<a class="funsent-editable-btn" href="javascript:;" title="删除当前行"><label>&#9986</label></a>').css(btnStyle).hover(over, out).mousedown(down).mouseup(up).find('label').css(btnLabelStyle).end();
 
                 let $row = rows[i], top = theadHeight + ($row.outerHeight() * i) + 2;
-                let $group = $('<div class="funsent-etable-btn-group"></div>').css(btnGroupStyle);
+                let $group = $('<div class="funsent-editable-btn-group"></div>').css(btnGroupStyle);
                 $group.append($btn1, $btn2, $btn3).css('top', top);
 
                 // 上方插入新行
@@ -760,7 +760,7 @@
         // 日期选择框编辑器
         dateEditor: function (name, value, column, style) {
             let readonly = column['readonly'] || true;
-            let $editor = $('<input class="funsent-etable-input-date" type="text" name="' + name + '" value="' + value + '" />').css(style).prop('readonly', readonly);
+            let $editor = $('<input class="funsent-editable-input-date" type="text" name="' + name + '" value="' + value + '" />').css(style).prop('readonly', readonly);
             laydate.render({ elem: $editor.get(0) });
             return $editor;
         },
@@ -869,7 +869,7 @@
     };
 
     // 插件主体
-    let etable = {
+    let editable = {
 
         // 初始化，支持链式调用
         init: function (element, opts) {
@@ -901,7 +901,7 @@
 
     // 插件对象暴露出去
     !('funsent' in window) && (window.funsent = {});
-    !('etable' in window.funsent) && (window.funsent.etable = etable);
+    !('editable' in window.funsent) && (window.funsent.editable = editable);
 
     if (!noGlobal) {
         window.jQuery = window.$ = jQuery;
