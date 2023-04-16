@@ -1,4 +1,4 @@
-# etable
+# editable
 
 ## 一款基于jQuery的轻量级可编辑表格插件，适用于快速录单等应用场景，支持键盘操作
 
@@ -12,13 +12,13 @@
 
 #### 插件演示
 
-[demo演示地址](https://funsent.github.io/etable/)
+[demo演示地址](https://funsent.github.io/editable/)
 
 > 以上演示地址使用的是 GitHub Pages 服务
 
-![etable demo 演示](tests/demo.png)
+![editable demo 演示](tests/demo.png)
 
-![etable多实例 实际项目中的演示](tests/instances.png)
+![editable多实例 实际项目中的演示](tests/instances.png)
 
 #### 插件使用
 
@@ -26,7 +26,7 @@
 
 ```html
 <div> <!-- 这层结构是必须的 -->
-    <table id="etable1">
+    <table id="editable1">
         <thead> <!-- thead是必须的 -->
             <tr>
                 <th style="width:40px;"></th> <!-- 注意是th不是td -->
@@ -50,7 +50,7 @@
         </tbody>
     </table>
 
-    <table id="etable2">
+    <table id="editable2">
         <thead> <!-- thead是必须的 -->
             <tr>
                 <th style="width:40px;"></th> <!-- 注意是th不是td -->
@@ -76,11 +76,11 @@
 </div>
 ```
 
-2.  引入jQuery.js、layer.js、laydate.js、etable.js
+2.  引入jQuery.js、layer.js、laydate.js、editable.js
 
 
 ```shell
-# git clone https://gitee.com/funsent/etable.git
+# git clone https://gitee.com/funsent/editable.git
 ```
 
 ```javascript
@@ -88,10 +88,10 @@
 <link rel="stylesheet" type="text/css" href="js/laydate/laydate.css" />
 <script src="js/laydate/laydate.js"></script>
 <script src="js/layer/layer.js"></script>
-<script src="../src/etable.js"></script>
+<script src="../src/editable.js"></script>
 ```
 
-> jQuery、layer、laydate 可自行到相关官网下载，或使用etable插件目录的现有文件
+> jQuery、layer、laydate 可自行到相关官网下载，或使用editable插件目录的现有文件
 
 
 3.  初始化，两个table转成可编辑的表格
@@ -99,8 +99,8 @@
 ```javascript
 let values = {0:'禁用', 1:'启用'}; // select下拉框的可选数据来源
 
-funsent.etable.init('#etable1', {
-    tag: 'etable1_tag',
+funsent.editable.init('#editable1', {
+    tag: 'editable1_tag',
     row_number: 3,
     editable_row_max: 10,
     enable_keyboard: true,
@@ -116,8 +116,8 @@ funsent.etable.init('#etable1', {
     ]
 });
 
-funsent.etable.init('#etable2', {
-    tag: 'etable2_tag',
+funsent.editable.init('#editable2', {
+    tag: 'editable2_tag',
     row_number: 3,
     editable_row_max: 10,
     enable_keyboard: true,
@@ -133,7 +133,7 @@ funsent.etable.init('#etable2', {
     ]
 });
 ```
-> 以上步骤后就完成了etable插件的页面载入和使用
+> 以上步骤后就完成了editable插件的页面载入和使用
 
 4.  数据收集
 
@@ -141,22 +141,22 @@ funsent.etable.init('#etable2', {
 
 ```javascript
 // 获取方法一：参数以字符串样式给出
-let arr = funsent.etable.data('#etable1'); // 获取etable1数据
-let arr = funsent.etable.data('#etable2'); // 获取etable2数据
+let arr = funsent.editable.data('#editable1'); // 获取editable1数据
+let arr = funsent.editable.data('#editable2'); // 获取editable2数据
 
 // 获取方法二: 参数以dom对象或jQuery对象形式给出
-let arr = funsent.etable.data(document.querySelector('#etable1')); // 获取etable1数据
-let arr = funsent.etable.data(document.querySelector('#etable2')); // 获取etable2数据
-let arr = funsent.etable.data($('#etable1')); // 获取etable1数据
-let arr = funsent.etable.data($('#etable2')); // 获取etable2数据
+let arr = funsent.editable.data(document.querySelector('#editable1')); // 获取editable1数据
+let arr = funsent.editable.data(document.querySelector('#editable2')); // 获取editable2数据
+let arr = funsent.editable.data($('#editable1')); // 获取editable1数据
+let arr = funsent.editable.data($('#editable2')); // 获取editable2数据
 
 // 获取方法三：参数以实例化顺序索引给出
-let arr = funsent.etable.data(0); // 获取etable1数据
-let arr = funsent.etable.data(1); // 获取etable2数据
+let arr = funsent.editable.data(0); // 获取editable1数据
+let arr = funsent.editable.data(1); // 获取editable2数据
 
 // 获取方法四：参数以自定义标签给出
-let arr = funsent.etable.data({tag:'etable1_tag'}); // 获取etable1数据
-let arr = funsent.etable.data({tag:'etable2_tag'}); // 获取etable2数据
+let arr = funsent.editable.data({tag:'editable1_tag'}); // 获取editable1数据
+let arr = funsent.editable.data({tag:'editable2_tag'}); // 获取editable2数据
 ```
 
 >  返回的是json对象数组，如果提交到服务器后，则请自行处理
@@ -174,11 +174,11 @@ let records = [
 ];
 
 // 同样有如下几种填充方式，任选一种
-funsent.etable.fill('#etable1', records);
-funsent.etable.fill(document.querySelector('#etable1'), records);
-funsent.etable.fill($('#etable1'), records);
-funsent.etable.fill(0, records);
-funsent.etable.fill({tag:'etable1_tag'}, records);
+funsent.editable.fill('#editable1', records);
+funsent.editable.fill(document.querySelector('#editable1'), records);
+funsent.editable.fill($('#editable1'), records);
+funsent.editable.fill(0, records);
+funsent.editable.fill({tag:'editable1_tag'}, records);
 ```
 
 > fill方法返回true表示成功，false表示失败
@@ -186,8 +186,8 @@ funsent.etable.fill({tag:'etable1_tag'}, records);
 #### 数据调试
 
 ```javascript
-// 新增的info方法用于输出etable内部存储的数据格式，供大家开发调试时使用
-console.log(funsent.etable.info());
+// 新增的info方法用于输出editable内部存储的数据格式，供大家开发调试时使用
+console.log(funsent.editable.info());
 ```
 
 #### 已实现列类型
@@ -218,4 +218,4 @@ console.log(funsent.etable.info());
 **联系方式**
 QQ: 2018708，微信：younggf
 
-> 加好友时请备注：etable插件
+> 加好友时请备注：editable插件
