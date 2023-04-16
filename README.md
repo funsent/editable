@@ -12,7 +12,7 @@
 
 #### 插件演示
 
-[demo演示地址](https://funsent.github.io/editable/)
+[demo演示地址](https://funsent.github.io/etable/)
 
 > 以上演示地址使用的是 GitHub Pages 服务
 
