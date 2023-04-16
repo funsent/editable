@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>etable 测试</title>
+    <style>
+        html,
+        body {
+            background-color: #fff;
+        }
+
+        .tips {
+            color: #999;
+        }
+
+        label.tips {
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        input,
+        select {
+            border-width: 1px;
+            border-style: solid;
+            border-color: #666 #ccc #ccc #666;
+            padding: 6px 6px 5px;
+            outline: none;
+        }
+
+        select {
+            width: 100%;
+            height: 26px;
+            text-align: left;
+            box-sizing: border-box;
+            padding: 5px 4px 6px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: #fff url(./images/arrow-down-16.png) no-repeat scroll right center;
+            border-radius: 0;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #06f;
+            background-color: #f4f9ff;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        table>thead>tr>th,
+        table>tbody>tr>td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        table>thead>tr>th {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>etable demo</h1>
+    <p class="tips">一款基于jQuery的轻量级可编辑表格插件，适用于快速录单等应用场景，支持键盘操作</p>
+
+    <br />
+    <h2>etable1 实例<label class="tips">（全功能：支持操作按钮、上下左右方向键移动、最后单元格TAB键新增行等）</label></h2>
+    <!-- 每个table需要一个div包裹 -->
+    <div>
+        <table id="etable1">
+            <thead>
+                <!-- thead是必须的 -->
+                <tr>
+                    <th style="width:40px;"></th> <!-- 注意是th不是td -->
+                    <th style="width:100px;">证书名称</th>
+                    <th style="width:100px;">证书编号</th>
+                    <th style="width:100px;">颁发日期</th>
+                    <th style="width:100px;">颁发机构</th>
+                    <th style="width:100px;">备注</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- <tr> tbody是必须的
+                    <td></td> 这里才是td
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+    <br />
+
+    <h2>etable2 实例<label class="tips">（禁用操作按钮，最后单元格TAB键依然可新增行）</label></h2>
+    <!-- 每个table需要一个div包裹 -->
+    <div>
+        <table id="etable2">
+            <thead>
+                <!-- thead是必须的 -->
+                <tr>
+                    <th style="width:40px;">序号</th> <!-- 注意是th不是td -->
+                    <th style="width:220px;">项目名称</th>
+                    <th style="width:100px;">开始时间</th>
+                    <th style="width:100px;">结束时间</th>
+                    <th style="width:140px;">实施单位</th>
+                    <th style="width:80px;">备注说明</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- <tr> tbody是必须的
+                    <td></td> 这里才是td
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+    <br />
+
+    <h2>etable3 实例<button id="etable3-tran-btn">点击转换成etable实例（空表格）</button></h2>
+    <!-- 每个table需要一个div包裹 -->
+    <div>
+        <table id="etable3">
+            <thead>
+                <!-- thead是必须的 -->
+                <tr>
+                    <th style="width:40px;">序号</th> <!-- 注意是th不是td -->
+                    <th style="width:220px;">项目名称</th>
+                    <th style="width:100px;">开始时间</th>
+                    <th style="width:100px;">结束时间</th>
+                    <th style="width:140px;">实施单位</th>
+                    <th style="width:80px;">备注说明</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- <tr> tbody是必须的
+                    <td></td> 这里才是td
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+    <br />
+
+    <h2>etable4 实例<button id="etable4-tran-btn">点击转换成etable实例（已有行的表格）</button></h2>
+    <!-- 每个table需要一个div包裹 -->
+    <div>
+        <table id="etable4">
+            <thead>
+                <!-- thead是必须的 -->
+                <tr>
+                    <th style="width:40px;">序号</th> <!-- 注意是th不是td -->
+                    <th style="width:220px;">项目名称</th>
+                    <th style="width:100px;">开始时间</th>
+                    <th style="width:100px;">结束时间</th>
+                    <th style="width:140px;">实施单位</th>
+                    <th style="width:80px;">备注说明</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>项目1</td>
+                    <td>2021-12-18</td>
+                    <td>2021-12-19</td>
+                    <td>宁波市</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br />
+
+    <h2>etable5 数据获取实例 <button id="etable5-tran-btn">点击获取编辑数据（注意console中显示）</button></h2>
+    <!-- 每个table需要一个div包裹 -->
+    <div>
+        <table id="etable5">
+            <thead>
+                <!-- thead是必须的 -->
+                <tr>
+                    <th style="width:40px;">序号</th> <!-- 注意是th不是td -->
+                    <th style="width:220px;">项目名称</th>
+                    <th style="width:100px;">开始时间</th>
+                    <th style="width:100px;">结束时间</th>
+                    <th style="width:140px;">实施单位</th>
+                    <th style="width:80px;">备注说明</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- <tr> tbody是必须的
+                    <td></td> 这里才是td
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <div id="etable5-data-result" style="width:auto;min-height:50px;background-color: #f2f2f2;border:1px solid #ccc;padding:10px;">etable5的编辑数据</div>
+    <br />
+    <br />
+
+    <button id="etable-debug-btn">所有etable实例调试信息（注意console中显示）</button>
+    <button id="etable1-debug-btn">etable1的调试信息（注意console中显示）</button>
+    <button id="etable2-debug-btn">etable2的编辑行调试信息（注意console中显示）</button>
+    <br /><br />
+    <div id="etable-debug-result" style="width:auto;min-height:50px;background-color: #f2f2f2;border:1px solid #ccc;padding:10px;">调试输出信息</div>
+    <br />
+    <br />
+
+
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/laydate/laydate.css" />
+    <script src="js/laydate/laydate.js"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="../src/etable.js"></script>
+
+    <script>
+        let values = { 0: '禁用', 1: '启用' }; // select下拉框的可选数据来源
+
+        funsent.etable.init('#etable1', {
+            tag: 'etable1_tag',
+            row_number: 2,
+            editable_row_max: 10,
+            enable_keyboard: true,
+            enable_tab_insert: true,
+            enable_button: true,
+            columns: [
+                0, //{ type: 'checkbox', name: 'id', value: '', readonly: false },
+                { type: 'text', name: 'name', value: '', align: 'left', readonly: false },
+                { type: 'text', name: 'certno', value: '', align: 'left', readonly: false },
+                { type: 'date', name: 'issue_time', value: '', align: 'center', readonly: true },
+                { type: 'text', name: 'issue_body', value: '', align: 'left', readonly: false },
+                { type: 'select', name: 'remark', value: '1', align: 'left', readonly: false, values: values, style: { padding: '5px 4px 6px' } },
+            ]
+        });
+
+        funsent.etable.init('#etable2', {
+            tag: 'etable2_tag',
+            row_number: 3,
+            editable_row_max: 10,
+            enable_keyboard: true,
+            enable_tab_insert: true,
+            enable_button: false,
+            columns: [
+                { type: 'checkbox', name: 'id', value: '', readonly: false },
+                { type: 'text', name: 'name', value: '', align: 'left', readonly: false },
+                { type: 'date', name: 'begin_time', value: '', align: 'center', readonly: false },
+                { type: 'date', name: 'end_time', value: '', align: 'center', readonly: true },
+                { type: 'text', name: 'organizer', value: '', align: 'left', readonly: false },
+                { type: 'select', name: 'remark', value: '', align: 'left', readonly: false, values: { 0: 'ok', 1: 'no' }, style: { padding: '5px 4px 6px' } },
+            ]
+        });
+
+        $('#etable3-tran-btn').click(function () {
+            $(this).unbind('click').prop('disabled', true);
+            funsent.etable.init('#etable3', {
+                tag: 'etable3_tag',
+                row_number: 4,
+                editable_row_max: 10,
+                enable_keyboard: true,
+                enable_tab_insert: true,
+                enable_button: true,
+                columns: [
+                    0, //{ type: 'checkbox', name: 'id', value: '', readonly: false },
+                    { type: 'text', name: 'name', value: '', align: 'left', readonly: false },
+                    { type: 'date', name: 'begin_time', value: '', align: 'center', readonly: false },
+                    { type: 'date', name: 'end_time', value: '', align: 'center', readonly: true },
+                    { type: 'text', name: 'organizer', value: '', align: 'left', readonly: false },
+                    { type: 'select', name: 'remark', value: '', align: 'left', readonly: false, values: { 0: 'ok', 1: 'no' }, style: { padding: '5px 4px 6px' } },
+                ]
+            });
+        });
+
+        $('#etable4-tran-btn').click(function () {
+            $(this).unbind('click').prop('disabled', true);
+            funsent.etable.init('#etable4', {
+                tag: 'etable4_tag',
+                row_number: 3,
+                editable_row_max: 10,
+                enable_keyboard: true,
+                enable_tab_insert: true,
+                enable_button: true,
+                columns: [
+                    0, //{ type: 'checkbox', name: 'id', value: '', readonly: false },
+                    { type: 'text', name: 'name', value: '', align: 'left', readonly: false },
+                    { type: 'date', name: 'begin_time', value: '', align: 'center', readonly: false },
+                    { type: 'date', name: 'end_time', value: '', align: 'center', readonly: true },
+                    { type: 'text', name: 'organizer', value: '', align: 'left', readonly: false },
+                    { type: 'select', name: 'remark', value: '', align: 'left', readonly: false, values: { 0: 'ok', 1: 'no' }, style: { padding: '5px 4px 6px' } },
+                ]
+            });
+        });
+
+        funsent.etable.init('#etable5', {
+            tag: 'etable5_tag',
+            row_number: 5,
+            editable_row_max: 10,
+            enable_keyboard: true,
+            enable_tab_insert: true,
+            enable_button: true,
+            columns: [
+                { type: 'checkbox', name: 'id', value: '1', readonly: false },
+                { type: 'text', name: 'name', value: 'funsent-etable', align: 'left', readonly: false },
+                { type: 'date', name: 'begin_time', value: '2021-12-18', align: 'center', readonly: false },
+                { type: 'date', name: 'end_time', value: '2021-12-19', align: 'center', readonly: true },
+                { type: 'text', name: 'organizer', value: 'funsent 5', align: 'left', readonly: false },
+                { type: 'select', name: 'remark', value: '1', align: 'left', readonly: false, values: { 0: 'ok', 1: 'no' }, style: { padding: '5px 4px 6px' } },
+            ]
+        });
+
+        $('#etable5-tran-btn').click(function () {
+            let data = funsent.etable.data('#etable5');
+            // let data = funsent.etable.data(4);
+            // let data = funsent.etable.data({tag:'etable5_tag'});
+            console.log(data);
+            $('#etable5-data-result').html('etable5 数据获取结果：<br />' + JSON.stringify(data));
+        });
+
+        $('#etable-debug-btn').click(function () {
+            let info = funsent.etable.info();
+            console.log(info);
+            $('#etable-debug-result').html('所有etable实例的调试信息：<br />' + JSON.stringify(info));
+        });
+
+        $('#etable1-debug-btn').click(function () {
+            let info = funsent.etable.info('#etable1');
+            console.log(info);
+            $('#etable-debug-result').html('etable1的所有调试信息：<br />' + JSON.stringify(info));
+        });
+
+        $('#etable2-debug-btn').click(function () {
+            let info = funsent.etable.info('#etable2', 'configs');
+            console.log(info);
+            $('#etable-debug-result').html('etable2的配置参数：<br />' + JSON.stringify(info));
+        });
+    </script>
+</body>
+
+</html>
